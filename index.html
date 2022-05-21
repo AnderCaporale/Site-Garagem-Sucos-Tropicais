@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logos/logo.png" type="image/x-icon">
+    <title>Garagem Sucos Tropicais</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+    
+</head>
+<body>
+    <header id="header">
+        
+        <picture>
+            <source media="(max-width: 500px )" srcset="logos/banner_pequeno.png">
+            <img src="logos/banner3.png" alt="" id="banner-pg">
+        </picture>
+        <nav>
+            <ul>
+                <li class="selecionado" id="bt-inicio" onclick='habilitar("inicio")' >Início</li>
+                <li class="botao" id='bt-sobre' onclick='habilitar("sobre")'>Sobre</li>
+                <li class="botao" id='bt-contato' onclick='habilitar("contato")'>Contato</li>
+                <li class="botao" id='bt-imagens' onclick='habilitar("imagens")'>Imagens</li>
+                <li class="botao" id='bt-mais' onclick='habilitar("mais")'>Mais</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio" class="conteudo">
+
+            <div class="slider">
+                <div class="imagens">
+                    <img src="slider/foto1.png" alt="" id="img1">
+                    <img src="slider/foto2.png" alt="" id="img2">
+                    <img src="slider/foto3.png" alt="" id="img3">
+                    <img src="slider/foto4.png" alt="" id="img4">
+                    <img src="slider/foto5.jpg" alt="" id="img5">
+                    <img src="slider/foto6.jpg" alt="" id="img6">
+                </div>
+                
+                <div class="botoes">
+                    <input type="radio" name="radio" id="radio1" checked="true" onclick="mudarImagem()">
+                    <label for="radio1"></label>
+                    <input type="radio" name="radio" id="radio2" onclick="mudarImagem()">
+                    <label for="radio2"></label>
+                    <input type="radio" name="radio" id="radio3" onclick="mudarImagem()">
+                    <label for="radio3"></label>
+                    <input type="radio" name="radio" id="radio4" onclick="mudarImagem()">
+                    <label for="radio4"></label>
+                    <input type="radio" name="radio" id="radio5" onclick="mudarImagem()">
+                    <label for="radio5"></label>
+                    <input type="radio" name="radio" id="radio6" onclick="mudarImagem()">
+                    <label for="radio6"></label>
+                </div>
+            </div>
+
+            <h1>Venha comer um lanche feito com muito amor e carinho!</h1>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem voluptatem perferendis quia sint iste saepe, inventore atque beatae quos maxime error, molestias consequuntur ad temporibus obcaecati. Dicta labore quo ratione! Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eaque voluptate optio impedit, unde voluptas iusto amet fugit at sint accusamus minima sequi non debitis, a quos est tempore commodi.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quas assumenda ipsam consectetur deleniti sit cum nemo repellendus, vitae voluptatum, quaerat reprehenderit perferendis aut incidunt blanditiis commodi, nam impedit veniam?</p>
+
+            <h1>Peça sua Tele-Entrega!</h1>
+            <img src="slider/foto8.png" alt="" id="fotoMoto">
+
+            
+        </section>
+
+        <section id="sobre" class="conteudo" hidden>
+            
+
+            <article id="historia">
+                <h1>Nossa História</h1>
+                <aside id="imgDono">
+                    <fieldset>
+                        <legend>Proprietária Inês de Azevedo Caporale</legend>
+                        <img src="imagens/ines.png" alt="" >
+                    </fieldset>
+                    
+                </aside>
+                <br>
+                <p>"Tudo começou com um sonho de empreender e possui meu próprio negócio", diz a proprietária Inês de Azevedo Caporale.</p>
+                <p>Após acumular experiências em lancherias por mais de 10 anos, Inês sempre desejou ter seu próprio negócio. Com a pandemia, Inês viu uma oportunidade de finalmente empreender e abrir seu próprio estabelecimento. E o melhor: na garagem de sua casa!</p>
+                <p>"No início foi difícil" - comenta Inês - "Mas não me dei por vencida!". E após alguns meses de muita reforma e preparação, o sonho finalmente estava realizado! Era o grande dia da inauguração do Garagem Sucos Tropicais. Familiares, amigos e conhecidos vieram para prestigiar a nova empreendora de Guaíba. Os clientes das antigas lancherias que Inês trabalhou também apareceram, pois reconheciam a enorma qualidade dos lanches e sucos de Inês.</p>
+                <p>Hoje os clientes já são fiéis ao Garagem Sucos Tropicais, sempre quando querem comer um lanche de qualidade por um preço acessível, já sabem a quem procurar! </p>
+                <p></p>
+                <br><br>
+             </article>
+
+            <div id="mapa">
+                <h2>Nossa Localização:</h2>
+                <p>R. Quarenta e Nove, 183 - Cohab, Guaíba</p>
+                <br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.1224956440083!2d-51.33701798519989!3d-30.090677940388336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197f782de90a1d%3A0x51bacf2f3fb5a1f5!2sGaragem%20Sucos%20Tropicais!5e0!3m2!1spt-BR!2sbr!4v1640250269542!5m2!1spt-BR!2sbr" width="600" height="450" style="border:1px solid black;" allowfullscreen="" loading="lazy" id="mapaGoogle"></iframe>
+            </div>
+        </section>
+
+        <section id="contato" class="conteudo" hidden>
+            <h1>Entre em contato conosco</h1>
+            <div id="cont1">
+                <a href="https://www.facebook.com/garagemsucostropicais/" target="_blank">
+                <img src="icones/facebook.png" alt="" width="25px">
+                <label>Facebook/garagemsucostropicais</label>
+                 </a>
+     
+                <a href="https://www.instagram.com/garagemsucostropicais/" target="_blank">
+                    <img src="icones/instagram.png" alt="" width="25px">
+                    <label>Insagram/garagemsucostropicais</label>
+                </a>
+
+                <a href="https://web.whatsapp.com/send?phone=5551983544976" target="_blank">
+                    <img src="icones/whatsapp.png" alt="" width="25px">
+                    <label> (51) 98354-4976</label>
+                </a>
+
+            </div>
+            <br>
+ 
+            <form action="#" name="mensagem" id="formulario" >
+                <h1>Mande sua Mensagem!</h1>
+                <label for="">Assunto:</label required>
+                <input type="email" id="assuntoEmail" placeholder="Digite o assunto">
+                <br>
+                <label for="">Mensagem:</label>
+                <textarea name="" id="textoEmail" rows="10" placeholder="Digite seu texto" wrap="hard" required></textarea>
+                <input type="submit" value="Enviar" onclick="sendMail(); return false">
+            </form>
+
+         
+        </section>
+
+        <section id="imagens" class="conteudo" hidden>
+            <h1>Nossas Imagens</h1>
+
+            <div class="fotos">
+                <img src="lanches/editados/foto1.jpg" alt="" class="foto" onclick="cliqueImagem(0)">
+                <img src="lanches/editados/foto2.jpg" alt="" class="foto" onclick="cliqueImagem(1)">
+                <img src="lanches/editados/foto3.jpg" alt="" class="foto" onclick="cliqueImagem(2)">
+                <img src="lanches/editados/foto4.jpg" alt="" class="foto" onclick="cliqueImagem(3)">
+                <img src="lanches/editados/foto5.jpg" alt="" class="foto" onclick="cliqueImagem(4)">
+                <img src="lanches/editados/foto6.jpg" alt="" class="foto" onclick="cliqueImagem(5)">
+                <img src="lanches/editados/foto7.jpg" alt="" class="foto" onclick="cliqueImagem(6)">
+                <img src="lanches/editados/foto8.jpg" alt="" class="foto" onclick="cliqueImagem(7)">
+                <img src="lanches/editados/foto9.jpg" alt="" class="foto" onclick="cliqueImagem(8)">
+                <img src="lanches/editados/foto10.jpg" alt="" class="foto" onclick="cliqueImagem(9)">
+                <img src="lanches/editados/foto11.jpg" alt="" class="foto" onclick="cliqueImagem(10)">
+            </div>
+
+            <div id="janelaModal">
+                <span id="fecharModal">X</span>
+                <span id="antModal"> < </span>
+                <img id="imgModal">
+                <span id="proxModal"> > </span>
+            </div>
+            
+
+
+        </section>
+
+        <section id="mais" class="conteudo" hidden>
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <div id="menu_footer">
+            <p onclick='habilitar("inicio")'><a href="#header">Início</a></p>
+            <p onclick='habilitar("sobre")'><a href="#header">Sobre</a></p>
+            <p onclick='habilitar("contato")'><a href="#header">Contato</a></p>
+            <p onclick='habilitar("imagens")'><a href="#header">Imagens</a></p>
+            <p onclick='habilitar("mais")'><a href="#header">Mais</a></p>
+        </div>
+        <p>garagemsucostropicais@hotmail.com</p>
+        <p>Criado por Anderson</p>
+    </footer>
+
+    
+    
+</body>
+</html>
