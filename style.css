@@ -128,6 +128,12 @@ section h1{
     margin: 0 15px;
     width: 100%;
     max-width: 350px;
+    display: flex;
+    align-items: center;
+}
+
+#imgDono > fieldset{
+    padding: 5px;
 }
 
 

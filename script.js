@@ -1,8 +1,7 @@
 let imagem1;
 let botoes;
-let tempo;
 let count;
-
+let proximo = true;
 
 //Função para controlar a exibição das abas do site
 function habilitar(id){
@@ -55,7 +54,6 @@ function cliqueImagem(img){
             count = 0;
         }
         modalImg.src = fotos[count].src;
-        console.log(fotos[count].src)
     }
 
     antBtn.onclick = function(){
@@ -64,13 +62,10 @@ function cliqueImagem(img){
             count = fotos.length - 1;
         }
         modalImg.src = fotos[count].src;
-        console.log(fotos[count].src)
     }
-
-
-
-
 }
+
+
 
 
 //Funções para o slider do início
@@ -79,21 +74,83 @@ window.addEventListener("load", inicializar);   //Inicializar variáveis ao carr
 function inicializar(){
     imagem1 = document.getElementById("img1");
     botoes = document.getElementsByName("radio");
-    tempo = 0;
-    count = 0;
+    count = 1;      //Contador da imagem do carrosel, começa em 1
+    
+    let posicaoInicial, posicaoFinal;
+
+    slider = document.getElementById("slider");
+
+    slider.addEventListener('dragstart', (e) => e.preventDefault());
+    slider.addEventListener('mousedown', (e)=>{
+        console.log("mousestart");
+        posicaoInicial = e['screenX'];
+        console.log(posicaoInicial);
+    })
+
+    slider.addEventListener('mouseup', (e)=>{
+        posicaoFinal = e['screenX'];
+        let resultadoMovimento = posicaoFinal - posicaoInicial;
+        
+        console.log("mouseend");
+        console.log(posicaoFinal);
+        console.log(`Movimento Inicial: ${posicaoInicial}, Movimento Final: ${posicaoFinal}, Diferença: ${resultadoMovimento}`);
+
+        if (resultadoMovimento < 0){
+            console.log("proxima imagem");
+            proximo = true;     //Deve exibir proxima imagem
+            nextImage();
+        } else if(resultadoMovimento > 0){
+            console.log("imagem anterior");
+            proximo = false;        //Deve exibir imagem anterior
+            nextImage();
+        }
+    })
+    
+
+    slider.addEventListener('touchstart', (e)=>{
+        //console.log("touchstart");
+        posicaoInicial = e.touches[0]['screenX'];
+        //console.log(posicaoInicial);
+    })
+
+    slider.addEventListener('touchend', (e)=>{
+        posicaoFinal = e.changedTouches[0]['screenX'];
+        let resultadoMovimento = posicaoFinal - posicaoInicial;
+        
+        //console.log("touchend");
+        //console.log(`Movimento Inicial: ${posicaoInicial}, Movimento Final: ${posicaoFinal}, Diferença: ${resultadoMovimento}`);
+
+        if (resultadoMovimento < 0){
+            //console.log("proxima imagem");
+            proximo = true;     //Deve exibir proxima imagem
+            nextImage();
+        } else if(resultadoMovimento > 0){
+            //console.log("imagem anterior");
+            proximo = false;        //Deve exibir imagem anterior
+            nextImage();
+        }
+    })
 }
 
 setInterval(function(){
     nextImage();
-    }, 4000);
+    }, 200000);
 
 
+//Função para mover a imagem por tempo ou por touch
 function nextImage(){
-    count++;
-
-    if (count>6){   //Se chegou na ultima imagem, volta pra primeira
-        count = 1;
+    if (proximo){
+        count++;
+        if (count>6){   //Se chegou na ultima imagem, volta pra primeira
+            count = 1;
+        }
+    } else{
+        count--;
+        if (count<1){   //Se está na primeira, vai pra última quando volta
+            count = 6;
+        }
     }
+    proximo = true;     //Coloca a próxima imagem se não houver touch
 
     document.getElementById("radio"+count).checked = true;
 
@@ -110,9 +167,7 @@ function mudarImagem(){
         if (botoes[i].checked){
             count = i;
             imagem1.style.marginLeft = -(i*imagem1.width) + "px";
-            console.log(imagem1.width)
         }
-        
     }
 }
 
